@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "sourceMap": false,
+        "target": "es2015",
+        "noImplicitAny": true,
+        "lib": ["esnext"],
+        "baseUrl": ".",
+        "rootDirs": [
+            "algorithm",
+            "data-structure",
+            "utils"
+        ],
+        "paths": {
+            "algorithm/*": ["algorithm/*"],
+            "data-structure/*": ["data-structure/*"],
+            "utils/*": ["utils/*"]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

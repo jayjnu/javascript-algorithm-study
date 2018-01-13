@@ -1,0 +1,1 @@
+export const pipeline = <F, G, H>(f:(arg:F) => F|G, g:(arg:F|G) => F|G|H) => (arg:F) => g(f(arg))
