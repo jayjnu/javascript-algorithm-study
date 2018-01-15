@@ -16,6 +16,6 @@ const TEST_PRE_ORDER = [
 
 const bst = new BinarySearchTree()
 
-describe('BinarySearchTree', () => {
+test('BinarySearchTree', () => {
 
 })

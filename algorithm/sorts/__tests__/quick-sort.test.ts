@@ -7,11 +7,11 @@ describe('pivotOf', () => {
   const oddArr = [1,2,3,4,5,6,7,8,9]
   const pivotOfOdd = 5
 
-  describe('even array', () => {
+  test('even array', () => {
     expect(pivotOf(evenArr)).toEqual(pivotOfEven)
   })
   
-  describe('odd array', () => {
+  test('odd array', () => {
     expect(pivotOf(oddArr)).toEqual(pivotOfOdd)
   })
 })
@@ -24,7 +24,7 @@ function desc(a:number, b:number) {
   return b - a
 }
 
-describe('quickSort', () => {
+test('quickSort', () => {
   const numbers = [2, 0 ,1, 8, 100, 45, 2];
   const strings = 'quicksort'.split('')
   const numberInAscResult = [...numbers].sort(asc)

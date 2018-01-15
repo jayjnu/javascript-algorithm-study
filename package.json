@@ -4,7 +4,7 @@
   "description": "personal repository for javascript algorithm &amp; data structure study",
   "main": "index.js",
   "scripts": {
-    "test": "node scripts/test.js"
+    "test": "node scripts/jest.js"
   },
   "repository": {
     "type": "git",
