@@ -1,6 +1,6 @@
 const { exec } = require('child_process')
 
-exec('jest', (err, stdout, stderr) => {
+const child = exec(['jest --colors', process.argv.slice(2)].join(' '), (err, stdout, stderr) => {
     if (err) {
         console.error(err)
         return
@@ -9,4 +9,12 @@ exec('jest', (err, stdout, stderr) => {
     } else {
         console.log(stderr)
     }
+})
+
+child.stdout.on('data', (body) => {
+    console.log(body.toString())
+})
+
+child.stderr.on('data', (body) => {
+    console.log(body.toString())
 })

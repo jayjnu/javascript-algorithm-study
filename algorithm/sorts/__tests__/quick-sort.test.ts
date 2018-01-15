@@ -1,4 +1,4 @@
-import { quickSort, pivotOf } from "algorithm/sorts/quick-sort/quick-sort.ts";
+import { quickSort, pivotOf } from "../quick-sort";
 
 describe('pivotOf', () => {
   const evenArr = [1,2,3,4,5,6,7,8,9,10]
