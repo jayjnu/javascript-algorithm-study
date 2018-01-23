@@ -1,20 +1,4 @@
-import { quickSort, pivotOf } from "../quick-sort";
-
-describe('pivotOf', () => {
-  const evenArr = [1,2,3,4,5,6,7,8,9,10]
-  const pivotOfEven = 5
-
-  const oddArr = [1,2,3,4,5,6,7,8,9]
-  const pivotOfOdd = 5
-
-  test('even array', () => {
-    expect(pivotOf(evenArr)).toEqual(pivotOfEven)
-  })
-  
-  test('odd array', () => {
-    expect(pivotOf(oddArr)).toEqual(pivotOfOdd)
-  })
-})
+import { quickSort } from "../quick-sort";
 
 function asc(a:number, b:number) {
  return a - b
@@ -24,12 +8,23 @@ function desc(a:number, b:number) {
   return b - a
 }
 
-test('quickSort', () => {
-  const numbers = [2, 0 ,1, 8, 100, 45, 2];
-  const strings = 'quicksort'.split('')
-  const numberInAscResult = [...numbers].sort(asc)
-  const numberInDescResult = [...numbers].sort(desc)
+function testAll(input: number[]) {
+  it('should sort array in ascending order', () => {
+    expect(quickSort(input, (a, b) => a - b)).toEqual(input.sort((a, b) => a - b));
+  })
+  
+  it('should sort array in descending order', () => {
+    expect(quickSort(input, (a, b) => b - a)).toEqual(input.sort((a, b) => b - a));
+  })
+}
 
-  expect(quickSort(numbers, asc)).toEqual(numberInAscResult)
-  expect(quickSort(numbers, desc)).toEqual(numberInDescResult)
-})
+describe('quickSort', () => {
+  const input = [
+    [5, 2, 7, 3, 4, 7],
+    [4, 2, 5, 7, 9, 20],
+    [75, 21, 7, 7, 7]
+  ];
+
+  input.forEach(testAll)
+  
+});

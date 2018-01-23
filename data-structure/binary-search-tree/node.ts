@@ -1,12 +1,8 @@
 export class Node<T> {
-  value: T
+  key: T
   left: Node<T>
   right: Node<T>
-  constructor(value: T) {
-    this.value = value
-  }
-
-  isLeaf(): boolean {
-    return !this.left && !this.right;
+  constructor(key: T) {
+    this.key = key
   }
 }
